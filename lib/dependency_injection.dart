@@ -1,7 +1,5 @@
 import 'package:get_it/get_it.dart';
 
-final getIt = GetIt.instance;
+final serviceLocator = GetIt.instance;
 
-void setupDependencies() {
-  print(' ');
-}
+void setupDependencies() {}
