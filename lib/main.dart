@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:test_app_traff_apps/dependency_injection.dart';
 import 'package:test_app_traff_apps/presentation/screens/home_page.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized;
+  setupDependencies();
   runApp(const MyApp());
 }
 
