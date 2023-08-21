@@ -11,15 +11,13 @@ abstract class NovelRepository {
 
 Future<void> readJsonAndAddToDatabase() async {
   try {
-    final jsonString = await rootBundle
-        .loadString('lib/assets/novel.json'); // Путь к вашему JSON-файлу
+    final jsonString = await rootBundle.loadString('lib/assets/novel.json');
     final jsonData = json.decode(jsonString);
 
     for (var novelData in jsonData) {
       final novel = Novel.fromJson(novelData);
       await DatabaseHelper.instance.addNovel(novel);
     }
-
     print('Novels added to the database successfully.');
   } catch (e) {
     print('Error reading JSON or adding novels to the database: $e');
