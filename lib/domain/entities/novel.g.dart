@@ -13,9 +13,9 @@ Novel _$NovelFromJson(Map<String, dynamic> json) => Novel(
       posterUrl: json['posterUrl'] as String,
       genres:
           (json['genres'] as List<dynamic>).map((e) => e as String).toList(),
-      isNewRelease: json['isNewRelease'] as bool,
+      isNewRelease: json['isNewRelease'] as int,
       chapters: (json['chapters'] as List<dynamic>)
-          .map((e) => _$ChapterFromJson(e as Map<String, dynamic>))
+          .map((e) => Chapter.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 

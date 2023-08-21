@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'novel.g.dart';
@@ -9,7 +11,7 @@ class Novel {
   final String description;
   final String posterUrl;
   final List<String> genres;
-  final bool isNewRelease;
+  final int isNewRelease;
   final List<Chapter> chapters;
 
   Novel({
